@@ -16,5 +16,11 @@
 	read_uncommitted, read_committed, repeatable_read and serializable.
 -	This file also has methods for "starting a transaction" at an appropriate isolation level --> def begin_isolated_db_transaction(isolation).
 	Other methods include, "starting a transaction", "committing a transaction", "rollbacking a transaction" and so on.
+-	For PostGRE, Sqlite and Mysql there are different connection adapters, such as sqlite3_adapter.rb present in active_record/connection_adapters. 
+	All the adapters extend the base class abstract_adapter, found in the same directory. 
+	Each adapter has an execute method which runs an SQL query. 
+	These methods are passed an sql query to run, while the specific implementation of the query or how it is run on the database is 
+	currently not clear, but what we can see in these execute() methods is that a connection (using variable @connection) 
+	to the database is made.
 
 	
