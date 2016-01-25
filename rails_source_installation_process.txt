@@ -1,0 +1,52 @@
+Do make sure that you have latest version of gems, ruby and bundle installed. 
+
+-- Update gems: gem update --system
+-- sudo gem install rubygems-update 
+-- update_rubygems
+
+Uninstalling and Installing ruby to latest version:
+-- brew uninstall ruby
+-- brew install ruby
+-- brew unlink ruby
+-- brew link --overwrite ruby
+
+Note: It prompts a message that not empty folder while linking, so you can delete that 
+folder and try the whole process of linking ruby again:
+-- rm -r /usr/local/opt/ruby
+
+To install bundler:
+-- sudo gem install bundler
+
+
+Now install all the gems using the bundler:
+-- bundle install
+
+If it fails for openssl:
+-- Check for installation of openssl: brew install openssl
+-- Then install eventmachine: sudo gem install eventmachine -v 1.0.8
+
+-- For installing mysql: brew install mysql
+-- sudo gem install mysql2 -v 0.4.2
+
+If you created some issues with bundler by using sudo, do following:
+-- rm -r ~/.bundler
+-- bundle install --path ~/.bundle
+
+If you get stuck with installing PostGRESQl, use following commands:
+-- brew uninstall postgresql
+-- brew install postgresql
+-- export PATH=$PATH:/usr/local/Cellar/postgresql/9.5.0/include/
+-- export ARCHFLAGS='-arch x86_64'
+-- sudo env ARCHFLAGS="-arch x86_64" gem install pg -v '0.18.4'
+-- bundle install
+
+If it fails for stackprof:
+* Check if it finds the correct ruby version. 
+* If no then some linking issue.
+* Alternatively, try to set the ruby version to the path.
+
+-- export PATH=$PATH:/usr/local/bin/ruby
+-- sudo gem install stackprof -v '0.2.7'
+
+Finally run the "bundle install" again.
+
