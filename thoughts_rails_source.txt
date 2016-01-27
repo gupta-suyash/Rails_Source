@@ -23,4 +23,18 @@
 	currently not clear, but what we can see in these execute() methods is that a connection (using variable @connection) 
 	to the database is made.
 
-	
+01/13/2016
+-	Arel is our key to accessing the SQL queries !
+	It is a building block used by other frameworks such as ActiveRecord (the ORM in Rails).
+	AR uses Arel to build the queries and executing it.
+	Arel builds a query using the notion of an AST.
+	ActiveRecord's query interface is built on top of Arel.	
+
+01/14/2016
+-	We need to try modify the sqlite3 adapter to check whether it can accept our instructions.
+	This will allow us to manipulate the query as per our needs.
+
+01/26/2014
+-	After building the rails from the source code, we are using my-test-app to test our application.
+	To check our changes in the rails code we need to create a sample application and modify our code 
+	as per our needs.	
