@@ -38,3 +38,11 @@
 -	After building the rails from the source code, we are using my-test-app to test our application.
 	To check our changes in the rails code we need to create a sample application and modify our code 
 	as per our needs.	
+
+01/27/2014
+-	TO make use of RubyMine for editing the rails source code, we need to unlock the files which requires changing the access modes 
+	for the file.
+	Use command chmod go+w to provide write permission to the file.
+	The location where the ruby-on-rails source files are present on Mac are: 
+	/Library/Ruby/Gems/2.0.0/gems/activerecord-4.0.8/lib/
+
